@@ -172,6 +172,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        \Modules\Dashboard\Providers\DashboardServiceProvider::class,
     ])->toArray(),
 
     /*
