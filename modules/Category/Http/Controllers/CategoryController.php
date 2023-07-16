@@ -3,12 +3,12 @@
 namespace Modules\Category\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Modules\Category\Entities\Repositories\CategoryRepo;
+use Modules\Category\Entities\Repositories\ProductRepo;
 
 class CategoryController extends CrudController
 {
 
-    public function __construct(CategoryRepo $repo)
+    public function __construct(ProductRepo $repo)
     {
         $this->title=__('category');
         $this->repo=$repo;
