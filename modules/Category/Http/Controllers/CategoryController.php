@@ -2,6 +2,9 @@
 
 namespace Modules\Category\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Modules\Category\Entities\Repositories\CategoryRepo;
+
 class CategoryController extends CrudController
 {
 
@@ -10,10 +13,10 @@ class CategoryController extends CrudController
         $this->title=__('category');
         $this->repo=$repo;
         $this->route='categories';
-        $this->viewLists='panel.category.lists';
-        $this->viewCreate='panel.category.create';
-        $this->viewEdit='panel.category.edit';
-        $this->viewShow='panel.category.seo';
+        $this->viewLists='Category::category.lists';
+        $this->viewCreate='Category::category.create';
+        $this->viewEdit='Category::category.edit';
+        $this->viewShow='Category::category.seo';
         $this->routeIndex='categories.index';
     }
 

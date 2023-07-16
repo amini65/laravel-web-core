@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('slug');
             $table->string('image')->nullable();
             $table->string('description')->nullable();
-            $table->integer('sub_category')->default(0);
+            $table->integer('parent_id')->default(0);
             $table->timestamps();
         });
     }

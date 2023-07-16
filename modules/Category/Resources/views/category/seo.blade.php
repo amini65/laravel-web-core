@@ -1,4 +1,4 @@
-@extends('panel.layouts.master')
+@extends('Dashboard::master')
 
 
 @section('content')
