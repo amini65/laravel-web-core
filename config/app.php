@@ -174,6 +174,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         \Modules\Dashboard\Providers\DashboardServiceProvider::class,
+        \Modules\Category\Providers\CategoryServiceProvider::class,
     ])->toArray(),
 
     /*
