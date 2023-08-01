@@ -3,15 +3,8 @@
 <html lang="en">
 <!--begin::Head-->
 <head><base href=""/>
-    <title>{{ (isset($pageTitle))?$pageTitle:'Letoco' }}</title>
+    <title>{{ (isset($pageTitle))?$pageTitle:'Panel' }}</title>
     <meta charset="utf-8" />
-    <meta name="description" content="Letoco Investment Crm">
-    <meta name="keywords" content="Letoco Investment">
-    <meta property="og:title" content="Letoco Investment">
-    <meta property="og:description" content="Letoco Investment Crm">
-    <meta property="og:site_name" content="Letoco Investment">
-    <meta property="og:url" content="https://crm.letocoinvestment.com/login">
-    <meta property="og:image" content="{{ asset('images/logo.svg') }}">
 
     <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />

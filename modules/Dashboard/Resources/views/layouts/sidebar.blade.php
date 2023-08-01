@@ -24,7 +24,27 @@
     <div id="kt_app_sidebar_menu_wrapper" class="app-sidebar-wrapper hover-scroll-overlay-y my-5" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer" data-kt-scroll-wrappers="#kt_app_sidebar_menu" data-kt-scroll-offset="5px" data-kt-scroll-save-state="true">
 
         <div class="menu menu-column menu-rounded menu-sub-indention px-3" id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
-            <x-menu-item type="single" icon="dashboard" link="{{ route('dashboard') }}" text="{{ __('dashboard') }}"/>
+
+
+            @foreach(config('sidebar.items') as $sidebarItem)
+                @if(!isset($sidebarItem['main']))
+                    <x-menu-item class="{{ (str_starts_with(request()->url(),$sidebarItem['url']) )?'active':'' }}"
+                                 type="single" icon="{{ $sidebarItem['icon'] }}"
+                                 link="{{ $sidebarItem['url'] }}"
+                                 text="{{ $sidebarItem['title'] }}" />
+                @else
+                    <x-menu-item type="accordion" icon="{!! $sidebarItem['main']['icon'] !!}"
+                                 text="{!! $sidebarItem['main']['title'] !!}">
+                        @foreach($sidebarItem['sub'] as $subMenu)
+                        <x-sub-menu-item
+                            class="{{ (str_starts_with(request()->url(),$subMenu['url']) )?'active':'' }}"
+                            text="{{ $subMenu['title'] }}"
+                            link="{{ $subMenu['url'] }}" />
+                        @endforeach
+                    </x-menu-item>
+
+                @endif
+            @endforeach
 
         </div>
     </div>

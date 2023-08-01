@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Category\Entities\Repositories;
+namespace Modules\Product\Entities\Repositories;
 
 interface CrudInterface
 {
