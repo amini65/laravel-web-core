@@ -3,7 +3,7 @@
 namespace Modules\Product\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Modules\Category\Providers\RouteServiceProvider;
+use Modules\Product\Providers\RouteServiceProvider;
 
 class ProductServiceProvider extends ServiceProvider
 {
@@ -19,11 +19,16 @@ class ProductServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        config()->set('sidebar.items.categories', [
-            "icon" => "i-categories",
-            "title" => __('category'),
-            "url" => route('categories.index'),
-
+        config()->set('sidebar.items.products', [
+            'main'=>[
+                "icon"=>"product",
+                "title"=>__('products'),
+                "url"=>route('products.index')
+            ],
+            'sub'=>[
+                ["title"=>__('product category'),"url"=>route('productCategories.index')],
+                ["title"=>__('product'),"url"=>route('products.index')],
+            ]
         ]);
     }
 }

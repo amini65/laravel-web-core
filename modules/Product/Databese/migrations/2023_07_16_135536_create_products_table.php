@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('video')->nullable();
             $table->string('description')->nullable();
             $table->boolean('status')->default(0);
+            $table->integer('parent_id')->default(0);
             $table->timestamps();
         });
     }

@@ -34,19 +34,6 @@ class ProductRepo implements CrudInterface
             ]);
     }
 
-    public function seo($category,$params)
-    {
-
-        $activity['title'] =$params['title'];
-        $activity['keyword'] =$params['keyword'];
-        $activity['image'] =$params['image'];
-        $activity['video'] =$params['video'];
-        $activity['description'] =$params['description'];
-        $activity['schema'] =$params['schema'];
-        $category->seo()->updateOrCreate(
-            ['seoable_id'=>$category->id],$activity
-        );
-    }
     public function update(int $id, array $data)
     {
         return $this->model::query()->find( $id)

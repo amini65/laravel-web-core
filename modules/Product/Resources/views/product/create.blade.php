@@ -12,10 +12,8 @@
 
         <div class="collapse show">
             <x-form method="post" url="{{ route($route.'.store') }}">
-                <x-forms.select2 name="type" title="{{ __('type') }}" placeholder="{{ __('type') }}">
-                    <option value="{{ \App\Models\Blog::class }}">blog</option>
-                    <option value="{{ \Modules\Product\Models\Product::class }}">product</option>
-                </x-forms.select2>
+
+                </input>
                 <x-forms.input type="text" name="title" title="{{ __('title') }}" placeholder="{{ __('title') }}"/>
                 <x-forms.filemanager name="image" placeholder="{{ __('image') }}"/>
                 <x-forms.textarea type="text" name="description" title="{{ __('description') }}"

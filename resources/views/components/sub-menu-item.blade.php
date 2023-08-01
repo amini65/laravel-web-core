@@ -1,5 +1,5 @@
 <div class="menu-item">
-    <a class="menu-link {{ ($active)?'active':'' }}" href="{!! $link !!}">
+    <a {{ $attributes->merge(['class' => 'menu-link']) }} {{ ($active)?'active':'' }}" href="{!! $link !!}">
         <span class="menu-bullet">
             <span class="bullet bullet-dot"></span>
         </span>

@@ -21,7 +21,7 @@
 @elseif($type == 'single')
     <div class="menu-item">
         <!--begin:Menu link-->
-        <a class="menu-link" href="{!! $link !!}" >
+        <a {{ $attributes->merge(['class' => 'menu-link']) }}  href="{!! $link !!}" >
             <span class="menu-icon">
                 <x-icon-svg name="{!! $icon !!}"/>
             </span>

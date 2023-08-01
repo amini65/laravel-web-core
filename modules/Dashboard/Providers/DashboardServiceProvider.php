@@ -17,6 +17,12 @@ class DashboardServiceProvider extends ServiceProvider
 
     public function boot()
     {
-
+        $this->app->booted(function () {
+            config()->set('sidebar.items.dashboard', [
+                "icon" => "i-dashboard",
+                "title" => __('dashboard'),
+                "url" => route('dashboard')
+            ]);
+        });
     }
 }
