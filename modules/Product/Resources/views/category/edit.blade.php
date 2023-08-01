@@ -10,15 +10,17 @@
 
         <div class="collapse show">
             <x-form method="edit" url="{{ route($route.'.update',[$model->id]) }}">
-                <x-forms.select2 name="type" title="{{ __('type') }}" placeholder="{{ __('type') }}">
-                    <option value="{{ \App\Models\Category::class }}">category</option>
-                    <option value="{{ \Modules\Product\Models\Product::class }}">product</option>
-
+                <x-forms.input type="text" name="title" value="{!! $model->title !!}" title="{{ __('title') }}" placeholder="{{ __('title') }}"/>
+                <x-forms.filemanager name="image" value="{!! $model->image !!}" placeholder="{{ __('image') }}"/>
+                <x-forms.textarea type="text" value="{!! $model->description !!}" name="description" title="{{ __('description') }}"
+                                  placeholder="{{ __('description') }}"/>
+                <x-forms.select2 name="parent_id" title="{{ __('parent category') }}"
+                                 placeholder="{{ __('parent category') }}">
+                    <option value="0">{{ __('select') }}</option>
+                @foreach(\Modules\Category\Entities\Repositories\CategoryRepo::byType(\Modules\Product\Models\Product::class) as $category)
+                        <option value="{!! $category->id !!}" {{ ($category->id==$model->parent_id)?'selected':'' }}>{!! $category->title !!}</option>
+                @endforeach
                 </x-forms.select2>
-                <x-forms.input type="text" value="{!! $model->title !!}" name="title" title="{{ __('title') }}"
-                               placeholder="{{ __('title') }}"/>
-                <x-forms.filemanager value="{!! $model->image !!}" name="image" placeholder="{{ __('image') }}"/>
-                <x-seo seo="{!! $model->seo !!}"/>
             </x-form>
         </div>
     </div>

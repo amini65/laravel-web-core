@@ -13,7 +13,7 @@ class ProductCategoryController extends CrudController
 
     public function __construct(CategoryRepo $repo)
     {
-        $this->title=__('product');
+        $this->title=__('product category');
         $this->repo=$repo;
         $this->route='productCategories';
         $this->viewLists='Product::category.lists';

@@ -17,10 +17,9 @@
                 <x-forms.filemanager name="image" placeholder="{{ __('image') }}"/>
                 <x-forms.textarea type="text" name="description" title="{{ __('description') }}"
                                   placeholder="{{ __('description') }}"/>
-                <x-forms.select2 name="parent_id" title="{{ __('parent category') }}"
-                                 placeholder="{{ __('parent category') }}">
+                <x-forms.select2 name="parent_id" title="{{ __('parent category') }}" placeholder="{{ __('parent category') }}">
                     <option value="0">{{ __('select') }}</option>
-                    @foreach(\Modules\Category\Models\Category::all() as $category)
+                    @foreach(\Modules\Category\Entities\Repositories\CategoryRepo::byType(\Modules\Product\Models\Product::class) as $category)
                         <option value="{!! $category->id !!}">{!! $category->title !!}</option>
                     @endforeach
 
