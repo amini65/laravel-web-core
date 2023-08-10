@@ -175,7 +175,7 @@ return [
 
         \Modules\Dashboard\Providers\DashboardServiceProvider::class,
         \Modules\Category\Providers\CategoryServiceProvider::class,
-        \Modules\Product\Providers\ProductServiceProvider::class,
+        \Modules\Product\Providers\BlogServiceProvider::class,
     ])->toArray(),
 
     /*
