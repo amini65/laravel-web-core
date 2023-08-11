@@ -172,10 +172,12 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
 
         \Modules\Dashboard\Providers\DashboardServiceProvider::class,
         \Modules\Category\Providers\CategoryServiceProvider::class,
-        \Modules\Product\Providers\BlogServiceProvider::class,
+        \Modules\Product\Providers\ProductServiceProvider::class,
+        \Modules\Blog\Providers\BlogServiceProvider::class,
     ])->toArray(),
 
     /*

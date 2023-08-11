@@ -4,6 +4,7 @@ namespace Modules\Product\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Modules\Product\Entities\Repositories\ProductRepo;
+use Modules\Product\Entities\Repositories\UserRepo;
 
 class ProductController extends CrudController
 {

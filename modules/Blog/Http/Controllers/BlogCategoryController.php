@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Modules\Blog\Models\Blog;
 use Modules\Category\Entities\Repositories\CategoryRepo;
 use Modules\Category\Models\Category;
-use Modules\Product\Entities\Repositories\ProductRepo;
+use Modules\Product\Entities\Repositories\UserRepo;
 use Modules\Product\Http\Controllers\CrudController;
 use Modules\Product\Models\Product;
 

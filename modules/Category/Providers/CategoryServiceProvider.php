@@ -10,7 +10,7 @@ class CategoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register(RouteServiceProvider::class);
-        $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../Database/migrations');
         $this->loadViewsFrom( __DIR__ . '/../Resources/views', $this->moduleName);
         $this->loadJsonTranslationsFrom(__DIR__ . "/../Lang");
 

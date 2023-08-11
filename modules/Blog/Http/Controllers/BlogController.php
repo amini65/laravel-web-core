@@ -3,20 +3,21 @@
 namespace Modules\Blog\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Modules\Product\Entities\Repositories\ProductRepo;
+use Modules\Blog\Entities\Repositories\BlogRepo;
+use Modules\Product\Entities\Repositories\UserRepo;
 
 class BlogController extends CrudController
 {
 
-    public function __construct(ProductRepo $repo)
+    public function __construct(BlogRepo $repo)
     {
-        $this->title=__('product');
+        $this->title=__('blog');
         $this->repo=$repo;
-        $this->route='products';
-        $this->viewLists='Product::product.lists';
-        $this->viewCreate='Product::product.create';
-        $this->viewEdit='Product::product.edit';
-        $this->routeIndex='products.index';
+        $this->route='blogs';
+        $this->viewLists='Blog::blog.lists';
+        $this->viewCreate='Blog::blog.create';
+        $this->viewEdit='Blog::blog.edit';
+        $this->routeIndex='blogs.index';
     }
 
 

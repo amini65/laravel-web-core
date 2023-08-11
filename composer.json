@@ -17,6 +17,7 @@
         "maatwebsite/excel": "^3.1",
         "morilog/jalali": "3.*",
         "rap2hpoutre/laravel-log-viewer": "^2.3",
+        "spatie/laravel-permission": "^5.10",
         "spatie/laravel-sitemap": "^6.3"
     },
     "require-dev": {

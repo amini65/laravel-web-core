@@ -28,9 +28,12 @@ class ProductRepo implements CrudInterface
     {
         return $this->model::query()
             ->create([
+                'category_id'=>$data['category_id'],
                 'title'=>$data['title'],
-                'type'=>$data['type'],
-                'image'=>$data['image']
+                'price'=>$data['price'],
+                'image'=>$data['image'],
+                'video'=>$data['video'],
+                'description'=>$data['description'],
             ]);
     }
 
@@ -38,9 +41,12 @@ class ProductRepo implements CrudInterface
     {
         return $this->model::query()->find( $id)
             ->update([
+                'category_id'=>$data['category_id'],
                 'title'=>$data['title'],
-                'type'=>$data['type'],
-                'image'=>$data['image']
+                'price'=>$data['price'],
+                'image'=>$data['image'],
+                'video'=>$data['video'],
+                'description'=>$data['description'],
             ]);
     }
 
